@@ -74,10 +74,6 @@ PRODUCT_COPY_FILES += \
     device/khadas/common/recovery/resize2fs:recovery/root/sbin/resize2fs \
     device/khadas/$(PRODUCT_DIR)/recovery/sh:recovery/root/sbin/sh
 
-$(shell python $(LOCAL_PATH)/auto_generator.py preinstall)
--include device/khadas/ampere/preinstall/preinstall.mk
-PRODUCT_COPY_FILES += \
-    device/khadas/ampere/preinstall/preinstall.sh:system/bin/preinstall.sh
 
 # remote IME config file
 PRODUCT_COPY_FILES += \

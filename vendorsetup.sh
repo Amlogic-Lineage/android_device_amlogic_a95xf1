@@ -1,3 +1,3 @@
-add_lunch_combo ampere-eng
-add_lunch_combo ampere-user
-add_lunch_combo ampere-userdebug
+add_lunch_combo a95f1-eng
+add_lunch_combo a95f1-user
+add_lunch_combo a95f1-userdebug

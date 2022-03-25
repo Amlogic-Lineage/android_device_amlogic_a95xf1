@@ -17,7 +17,7 @@
 # build for Meson reference board.
 #
 
-PRODUCT_DIR := ampere
+PRODUCT_DIR := a95f1
 
 # Dynamic enable start/stop zygote_secondary in 64bits
 # and 32bit system, default closed
@@ -71,7 +71,7 @@ endif
 endif
 
 
-# ampere:
+# a95f1:
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.hdmi.device_type=4 \
         ro.hdmi.set_menu_language=true \
@@ -83,10 +83,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.vendor.sys.cec.set_menu_language=false
 
-PRODUCT_NAME := ampere
-PRODUCT_DEVICE := ampere
+PRODUCT_NAME := a95f1
+PRODUCT_DEVICE := a95f1
 PRODUCT_BRAND := Droidlogic
-PRODUCT_MODEL := ampere
+PRODUCT_MODEL := a95f1
 PRODUCT_MANUFACTURER := Droidlogic
 
 TARGET_KERNEL_BUILT_FROM_SOURCE := true
@@ -102,7 +102,7 @@ BOARD_AML_VENDOR_PATH := vendor/amlogic/common/
 BOARD_WIDEVINE_TA_PATH := vendor/amlogic/
 
 BOARD_AML_TDK_KEY_PATH := device/khadas/common/tdk_keys/
-#AB_OTA_UPDATER :=true
+AB_OTA_UPDATER := false
 BUILD_WITH_AVB := true
 
 ifeq ($(BUILD_WITH_AVB),true)
@@ -197,10 +197,11 @@ endif # ifeq ($(PRODUCT_AML_SECURE_BOOT_VERSION3),true)
 #
 ########################################################################
 #KERNEL_A32_SUPPORT := false
+ifneq ($(ANDROID_BUILD_TYPE), 64)
 ifndef KERNEL_A32_SUPPORT
 KERNEL_A32_SUPPORT := true
 endif
-
+endif
 ########################################################################
 #
 #                           ATV
@@ -270,7 +271,7 @@ include hardware/amlogic/wifi/configs/wifi.mk
 #
 #########################################################################
 
-BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH := false
 BLUETOOTH_MODULE := BCMBT
 include hardware/amlogic/bluetooth/configs/bluetooth.mk
 

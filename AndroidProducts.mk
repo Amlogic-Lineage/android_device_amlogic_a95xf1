@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/ampere.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/a95f1.mk
