@@ -1,2 +1,2 @@
-require board=a95f1
+require board=a95xf1
 require version-bootloader=01.01.180822.145544

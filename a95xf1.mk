@@ -17,7 +17,7 @@
 # build for Meson reference board.
 #
 
-PRODUCT_DIR := a95f1
+PRODUCT_DIR := a95xf1
 
 # Dynamic enable start/stop zygote_secondary in 64bits
 # and 32bit system, default closed
@@ -71,7 +71,7 @@ endif
 endif
 
 
-# a95f1:
+# a95xf1:
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.hdmi.device_type=4 \
         ro.hdmi.set_menu_language=true \
@@ -83,10 +83,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.vendor.sys.cec.set_menu_language=false
 
-PRODUCT_NAME := a95f1
-PRODUCT_DEVICE := a95f1
+PRODUCT_NAME := a95xf1
+PRODUCT_DEVICE := a95xf1
 PRODUCT_BRAND := Droidlogic
-PRODUCT_MODEL := a95f1
+PRODUCT_MODEL := a95xf1
 PRODUCT_MANUFACTURER := Droidlogic
 
 TARGET_KERNEL_BUILT_FROM_SOURCE := true
@@ -261,9 +261,21 @@ endif
 
 WIFI_MODULE := multiwifi
 #WIFI_MODULE := BCMWIFI
-#WIFI_BUILD_IN := true
+WIFI_BUILD_IN := false
 
 include hardware/amlogic/wifi/configs/wifi.mk
+
+PRODUCT_PACKAGES += \
+    ssv6051
+
+#    ssv6x5x \
+#    ssv_hwif_ctrl
+
+# ================ led
+
+PRODUCT_PACKAGES += \
+    openvfd \
+    openvfdservice
 
 #########################################################################
 #
@@ -453,7 +465,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #########################################################################
 ifeq ($(BUILD_WITH_AVB),true)
 PRODUCT_PACKAGES += \
-	bootctrl.amlogic \
+#	bootctrl.amlogic \
 	libavb_user
 endif
 
